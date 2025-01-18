@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="translation.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <script src="translation.js" defer></script>
+
+    </head>
+    <body>
+        <div class="heading-container">
+            <p class="heading">SANSKRIT MANUSCRIPT TRANSLATION USING TRANSFORMERS</p>
+        </div>
+        <div class="button-section">
+            <label for="image-upload">Upload an image</label> 
+            <input type="file" id="image-upload" accept="image/*"> 
+            <img id="blah" src="#" alt="your image" />
+            <img id="blah" src="#" alt="Your uploaded image will appear here">
+        </div>
+        <div class="text-box-container">
+            <div class="text-box">
+                Results
+            </div>
+        </div>
+        
+
+        <script>
+            // JavaScript to handle image preview
+            document.getElementById('image-upload').addEventListener('change', function(event) {
+                const preview = document.getElementById('blah');
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    </body>
+</html>
